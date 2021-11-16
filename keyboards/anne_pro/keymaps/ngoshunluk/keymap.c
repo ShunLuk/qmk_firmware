@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Function and Nav
  *
  * ┌-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬----------┐
- * │     │     │     │     │     │     │     │     │     │     │     │     │     │    L3    │
+ * │Reset│     │     │     │     │     │     │     │     │     │     │     │     │    L3    │
  * ├-----┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┌--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬-------┤
  * │        │ F12 │  F7 │ F8  │ F9  │ Prt │ Ins │ Home│ PUp │ PDwn│ End │     │     │       │
  * ├--------┴┬----┴┬----┴┬----┴┬----┴┬----└┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴-------┤
@@ -67,9 +67,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├-----┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┌--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬-------┤
  * │        │  [  │  7  │  8  │  9  │  ]  │ Redo│Paste│ Copy│ Cut │ Undo│     │     │       │
  * ├--------┴┬----┴┬----┴┬----┴┬----┴┬----└┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴-------┤
- * │         │  ;  │  4  │  5  │  6  │  =  │     │Shift│ Ctrl│ Alt │ Win │     │            │
+ * │         │  ;  │  4  │  5  │  6  │  =  │  `  │Shift│ Ctrl│ Alt │ Win │     │            │
  * ├---------┴┬----┴┬----┴┬----┴┬----┴┬----└┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴------------┤
- * │          │  \  │  1  │  2  │  3  │  -  │     │     │     │     │     │                 │
+ * │          │  \  │  1  │  2  │  3  │  -  │  /  │  ,  │     │     │     │                 │
  * ├------┬---┴-┬---┴--┬--┴-----┴-----┴-----┴-----┴-----┴--┬--┴-----┼-----┴┬-------┬--------┤
  * │      │     │  .   │                 0                 │        │      │       │        │
  * └------┴-----┴------┴-----------------------------------┴--------┴------┴-------┴--------┘
@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT(
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
       XXXXXXX, KC_LBRC, KC_7, KC_8, KC_9, KC_RBRC, KC_AGIN, KC_PSTE, KC_COPY, KC_CUT, KC_UNDO, XXXXXXX, XXXXXXX, XXXXXXX,
-      XXXXXXX, KC_SCLN, KC_4, KC_5, KC_6, KC_EQL, XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,          XXXXXXX,
-      XXXXXXX, KC_BSLS, KC_1, KC_2, KC_3, KC_MINS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX,
+      XXXXXXX, KC_SCLN, KC_4, KC_5, KC_6, KC_EQL, KC_GRV, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,          XXXXXXX,
+      XXXXXXX, KC_BSLS, KC_1, KC_2, KC_3, KC_MINS, KC_SLSH, KC_COMM, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX,
       XXXXXXX, XXXXXXX, KC_DOT,                   KC_0,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
   ),
 /* Bluetooth
@@ -105,11 +105,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* RGB
  *
  * ┌-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬-----┬----------┐
- * │Back │  P1 │  P2 │  P3 │  P4 │     │     │     │     │     │     │     │     │          │
+ * │     │     │     │     │     │     │     │     │     │     │     │     │     │          │
  * ├-----┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┌--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬--┴--┬-------┤
- * │        │  R1 │  R2 │  R3 │  R4 │     │     │     │     │     │     │     │     │       │
+ * │        │     │     │     │ rgb │ rat │ brt │ mod │     │     │     │     │     │       │
  * ├--------┴┬----┴┬----┴┬----┴┬----┴┬----└┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴-------┤
- * │         │  F1 │  F2 │  F3 │  F4 │     │     │     │     │     │     │     │            │
+ * │         │     │     │     │     │     │     │     │     │     │     │     │            │
  * ├---------┴┬----┴┬----┴┬----┴┬----┴┬----└┬----┴┬----┴┬----┴┬----┴┬----┴┬----┴------------┤
  * │          │     │     │     │     │     │     │     │     │     │     │                 │
  * ├------┬---┴-┬---┴--┬--┴-----┴-----┴-----┴-----┴-----┴--┬--┴-----┼-----┴┬-------┬--------┤
