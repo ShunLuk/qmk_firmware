@@ -28,6 +28,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 15
 
+#define TAPPING_TERM 500
+#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+
 #define RIGHT_HALF
 
 /* disable these deprecated features by default */
@@ -36,9 +40,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* RGB underglow */
 #define RGBLED_NUM 12
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8
+#define RGBLIGHT_HUE_STEP 50
+#define RGBLIGHT_SAT_STEP 81
+#define RGBLIGHT_VAL_STEP 100
 #define RGBLIGHT_LIMIT_VAL 250 /* The maximum brightness level */
 #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-#define RGBLIGHT_ANIMATIONS
+/* #define RGBLIGHT_ANIMATIONS */
+#define RGBLIGHT_SPLIT
+#define RGBLIGHT_LAYERS
