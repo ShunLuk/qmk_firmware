@@ -40,11 +40,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* RGB underglow */
 #define RGBLED_NUM 12
-#define RGBLIGHT_HUE_STEP 50
-#define RGBLIGHT_SAT_STEP 81
+#define RGBLIGHT_HUE_STEP 48
+#define RGBLIGHT_SAT_STEP 58
 #define RGBLIGHT_VAL_STEP 100
 #define RGBLIGHT_LIMIT_VAL 250 /* The maximum brightness level */
 #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-/* #define RGBLIGHT_ANIMATIONS */
 #define RGBLIGHT_SPLIT
 #define RGBLIGHT_LAYERS
+#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_BREATHING(1)
