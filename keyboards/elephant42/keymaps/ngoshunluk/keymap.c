@@ -18,8 +18,6 @@
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_caps_word(keycode, record)) { return false; }
-  // Your macros ...
-
   return true;
 }
 
@@ -31,7 +29,24 @@ enum layer_names {
     _FUN
 };
 
-// enum combo_events {};
+enum combos {
+  JKL_RBRC,
+  UIO_EQL,
+  JIL_MINS,
+  COMBO_LENGTH
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
+
+const uint16_t PROGMEM rbrc_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM eql_combo[] = {KC_U, KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM mins_combo[] = {KC_J, KC_I, KC_L, COMBO_END};
+
+combo_t key_combos[] = {
+  [JKL_RBRC] = COMBO(rbrc_combo, KC_RBRC),
+  [UIO_EQL] = COMBO(eql_combo, KC_EQL),
+  [JIL_MINS] = COMBO(mins_combo, KC_MINS),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
@@ -48,11 +63,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_GAME] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-     KC_LALT, KC_LSFT, KC_Q,  KC_NO,  KC_E,   KC_T,                                        KC_Y,   KC_U,   KC_I,   KC_O,   KC_P, DF(0),
+     KC_NO, KC_LSFT, KC_Q,  KC_NO,  KC_E,   KC_T,                                          KC_Y,   KC_U,   KC_I,   KC_O,   KC_P, DF(0),
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
-     KC_LCTL, KC_NO, KC_A,    KC_W,   KC_D,   KC_F,                                        KC_H,   KC_J,   KC_K,   KC_L,  KC_SCLN, DF(1),
+     KC_NO, KC_LCTL, KC_A,    KC_W,   KC_D,   KC_F,                                        KC_H,   KC_J,   KC_K,   KC_L,  KC_SCLN, DF(1),
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
-              KC_NO , KC_TAB, KC_S,   KC_R,   KC_G,                                       KC_LBRC, KC_QUOT, KC_RBRC, KC_MINS, KC_EQL,
+              KC_LALT, KC_TAB, KC_S,   KC_R,   KC_G,                                       KC_LBRC, KC_QUOT, KC_RBRC, KC_MINS, KC_EQL,
   //        `-------+-------+-------+-------+-------+-------+-------.    ,-------+-------+-------+-------+-------+-------+-------'
                                       KC_NO, OSL(2), KC_SPC, KC_ESC,      KC_ENT, KC_BSPC, OSL(3), KC_NO
   //                                `-------+-------+-------+-------'    `-------+-------+-------+-------'
@@ -76,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
       KC_NO, KC_GRV,  KC_4,   KC_5,   LSFT_T(KC_6), KC_EQL,                               KC_SCLN, RSFT_T(KC_DOT), KC_COMM,KC_QUES,KC_EXLM, KC_NO,
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------'
-             KC_0,   KC_1,   KC_2,   KC_3,  KC_BSLS,                                     KC_LBRC, KC_AT, KC_AMPR, KC_DLR, KC_RBRC,
+             KC_0,   KC_1,   KC_2,   KC_3,  KC_SLSH,                                     KC_LBRC, KC_AT, KC_AMPR, KC_DLR, KC_RBRC,
   //        `-------+-------+-------+-------+-------+-------+-------.    ,-------+-------+-------+-------+-------+-------+-------'
                                       KC_NO, KC_TRNS, KC_SPC, KC_ESC,     KC_ENT, KC_BSPC, OSL(4), KC_NO
   //                                `-------+-------+-------+-------'    `-------+-------+-------+-------'
