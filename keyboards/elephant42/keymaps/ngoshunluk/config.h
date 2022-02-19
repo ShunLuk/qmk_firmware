@@ -21,6 +21,6 @@
 #define OLED_FONT_H "keymaps/default/glcdfont.c"
 #endif
 
-#define TAPPING_TERM 500
+#define TAPPING_TERM 250
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
