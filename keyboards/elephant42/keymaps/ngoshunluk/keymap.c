@@ -51,7 +51,7 @@ combo_t key_combos[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-     KC_NO,   KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,                                      KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  , DF(0),
+     KC_F13,   KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,                                      KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  , DF(0),
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
      KC_NO,   KC_A  , LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G  ,                    KC_H  , RSFT_T(KC_J),  RCTL_T(KC_K),  RALT_T(KC_L),  RGUI_T(KC_SCLN), DF(1),
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------'
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_GAME] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-     KC_NO, KC_LSFT, KC_Q,  KC_NO,  KC_E,   KC_T,                                          KC_Y,   KC_U,   KC_I,   KC_O,   KC_P, DF(0),
+     KC_F13, KC_LSFT, KC_Q,  KC_NO,  KC_E,   KC_T,                                          KC_Y,   KC_U,   KC_I,   KC_O,   KC_P, DF(0),
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
      KC_NO, KC_LCTL, KC_A,    KC_W,   KC_D,   KC_F,                                        KC_H,   KC_J,   KC_K,   KC_L,  KC_SCLN, DF(1),
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-      KC_NO , LGUI(KC_TAB), LCTL(KC_TAB), KC_NO, LCTL(KC_T), KC_NO,                        KC_NO, KC_LSFT,KC_LCTL,KC_LALT,KC_LGUI,KC_NO ,
+      KC_F13 , KC_NO, LCTL(KC_TAB), KC_NO, LCTL(KC_T), KC_NO,                                KC_NO, KC_LSFT,KC_LCTL,KC_LALT,KC_LGUI,KC_NO ,
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
       KC_NO , KC_TAB, KC_LEFT,  KC_UP, KC_RGHT, LCTL(LSFT(KC_R)),                          KC_NO, KC_HOME,KC_PGUP,KC_END, KC_NO,  KC_NO ,
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------'
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NUM] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-      KC_NO, KC_TILD, KC_7,   KC_8,   KC_9,  KC_MINS,                                     KC_LPRN,KC_QUOT,KC_DQUO,KC_PSLS,KC_RPRN, KC_NO,
+      KC_F13, KC_TILD, KC_7,   KC_8,   KC_9,  KC_MINS,                                     KC_LPRN,KC_QUOT,KC_DQUO,KC_PSLS,KC_RPRN, KC_NO,
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
       KC_NO, KC_GRV,  KC_4,   KC_5,   LSFT_T(KC_6), KC_EQL,                               KC_SCLN, RSFT_T(KC_DOT), KC_COMM,KC_QUES,KC_EXLM, KC_NO,
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------'
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUN] = LAYOUT(
   //,-------+-------+-------+-------+-------+-------.                                    ,-------+-------+-------+-------+-------+-------.
-      KC_NO, KC_F12,  KC_F7,  KC_F8,  KC_F9,  KC_NO,                                       KC_NO, KC_INS, KC_DEL, KC_NO,  KC_NO, KC_NO,
+      KC_F13, KC_F12,  KC_F7,  KC_F8,  KC_F9,  KC_NO,                                       KC_NO, KC_INS, KC_DEL, KC_NO,  KC_NO, KC_NO,
   //|-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------|
       KC_NO, KC_F11,  KC_F4,  KC_F5,  KC_F6, KC_NO,                                      KC_NO, KC_LSFT,KC_LCTL,KC_LALT, KC_LGUI,KC_NO,
   //`-------+-------+-------+-------+-------+-------|                                    |-------+-------+-------+-------+-------+-------'
