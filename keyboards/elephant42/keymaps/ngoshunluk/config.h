@@ -16,11 +16,9 @@
 
 #pragma once
 
-// place overrides here
-#ifdef OLED_DRIVER_ENABLE
-#define OLED_FONT_H "keymaps/default/glcdfont.c"
-#endif
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5 // _BASE, _GAME, _NAV, _NUM, _FUN
 
 #define TAPPING_TERM 250
 #define PERMISSIVE_HOLD
-#define IGNORE_MOD_TAP_INTERRUPT
+#define CHORDAL_HOLD
+#define FLOW_TAP_TERM 150

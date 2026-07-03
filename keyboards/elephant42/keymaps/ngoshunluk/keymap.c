@@ -14,11 +14,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "features/caps_word.h"
+#include "os_detection.h"
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_caps_word(keycode, record)) { return false; }
-  return true;
+bool process_detected_host_os_user(os_variant_t detected_os) {
+    switch (detected_os) {
+        case OS_MACOS:
+        case OS_IOS:
+            keymap_config.swap_lctl_lgui = true;
+            keymap_config.swap_rctl_rgui = true;
+            break;
+        default:
+            keymap_config.swap_lctl_lgui = false;
+            keymap_config.swap_rctl_rgui = false;
+            break;
+    }
+    clear_keyboard(); // avoid stuck mods across the swap
+    return true;
 }
 
 enum layer_names {
@@ -38,9 +49,9 @@ enum combos {
 
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
 
-const uint16_t PROGMEM rbrc_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM rbrc_combo[] = {RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM eql_combo[] = {KC_U, KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM mins_combo[] = {KC_J, KC_I, KC_L, COMBO_END};
+const uint16_t PROGMEM mins_combo[] = {RSFT_T(KC_J), KC_I, RALT_T(KC_L), COMBO_END};
 
 combo_t key_combos[] = {
   [JKL_RBRC] = COMBO(rbrc_combo, KC_RBRC),
